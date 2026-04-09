@@ -50,11 +50,10 @@ document.addEventListener('DOMContentLoaded', () => {
     anchor.group.matrixAutoUpdate = false;
   
     const clock = new THREE.Clock();
-
+// Placed
     let placed = false;
-
-anchor.onTargetFound = () => {
-  if (!placed) {
+    anchor.onTargetFound = () => {
+    if (!placed) {
     placed = true;
 
     const worldPosition = new THREE.Vector3();
@@ -64,6 +63,7 @@ anchor.onTargetFound = () => {
     gltf.scene.position.copy(worldPosition);
   }
 };
+// placed
 
 
 
