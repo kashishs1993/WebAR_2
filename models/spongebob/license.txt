@@ -1,0 +1,11 @@
+Model Information:
+* title:	Swing Dancing spongebob
+* source:	https://sketchfab.com/3d-models/swing-dancing-spongebob-7896f48525374e50a2966824948e2aeb
+* author:	AIUM2 (https://sketchfab.com/alfredonicolas)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Swing Dancing spongebob" (https://sketchfab.com/3d-models/swing-dancing-spongebob-7896f48525374e50a2966824948e2aeb) by AIUM2 (https://sketchfab.com/alfredonicolas) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
