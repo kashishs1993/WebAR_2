@@ -42,8 +42,8 @@ document.addEventListener('DOMContentLoaded', () => {
     //model
     const gltf = await loadGLTF('./models/NYburger.glb');
     gltf.scene.scale.set(0.5, 0.5, 0.5);
-    gltf.scene.position.set(0, 0, 0.3);
-    gltf.scene.rotation.set(90, 0, 0);
+    gltf.scene.position.set(0, 0, 0.2);
+    gltf.scene.rotation.set(Math.PI/2, 0, 0);
 
     const anchor = mindarThree.addAnchor(0);
     anchor.group.add(gltf.scene);
