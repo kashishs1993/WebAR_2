@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //model
     const gltf = await loadGLTF('./models/NYburger.glb');
     gltf.scene.scale.set(0.5, 0.5, 0.5);
-    gltf.scene.position.set(0, 0.2, 0);
+    gltf.scene.position.set(0, 0, 0.3);
     gltf.scene.rotation.set(90, 0, 0);
 
     const anchor = mindarThree.addAnchor(0);
@@ -51,18 +51,18 @@ document.addEventListener('DOMContentLoaded', () => {
   
     const clock = new THREE.Clock();
 // Placed
-    let placed = false;
-    anchor.onTargetFound = () => {
-    if (!placed) {
-    placed = true;
+//     let placed = false;
+//     anchor.onTargetFound = () => {
+//     if (!placed) {
+//     placed = true;
 
-    const worldPosition = new THREE.Vector3();
-    anchor.group.getWorldPosition(worldPosition);
+//     const worldPosition = new THREE.Vector3();
+//     anchor.group.getWorldPosition(worldPosition);
 
-    scene.add(gltf.scene);
-    gltf.scene.position.copy(worldPosition);
-  }
-};
+//     scene.add(gltf.scene);
+//     gltf.scene.position.copy(worldPosition);
+//   }
+// };
 // placed
 
 
@@ -86,12 +86,15 @@ const listener = new THREE.AudioListener();
       audio.pause();
     }
 
-
+let rotate = true;
 
     await mindarThree.start();
     renderer.setAnimationLoop(() => {
     const delta = clock.getDelta();
     anchor.group.updateMatrixWorld(true);
+    if (rotate) {
+    gltf.scene.rotation.y += 0.01;
+  }
     renderer.render(scene, camera);
 });
   }
