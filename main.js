@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const {renderer, scene, camera} = mindarThree;
     
     //video
-    const video = await loadVideo("./videos/video1.mp4");
-    const texture = new THREE.VideoTexture(video);
+    // const video = await loadVideo("./videos/video1.mp4");
+    // const texture = new THREE.VideoTexture(video);
 
     const geometry = new THREE.PlaneGeometry(1, 1);
     const material = new THREE.MeshBasicMaterial({map: texture});
@@ -23,15 +23,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const anchorVid = mindarThree.addAnchor(0);
     anchorVid.group.add(plane);
 
-    anchorVid.onTargetFound = () => {
-      video.loop = true;
-      video.play();
-    }
-    anchorVid.onTargetLost = () => {
-      video.pause();
-    }
-    video.addEventListener( 'play', (loop) => {
-    });
+    // anchorVid.onTargetFound = () => {
+    //   video.loop = true;
+    //   video.play();
+    // }
+    // anchorVid.onTargetLost = () => {
+    //   video.pause();
+    // }
+    // video.addEventListener( 'play', (loop) => {
+    // });
 
     const light = new THREE.HemisphereLight( 0xffffff, 0xbbbbff, 1 );
     scene.add(light);
