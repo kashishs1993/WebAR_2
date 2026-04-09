@@ -17,9 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const texture = new THREE.VideoTexture(video);
 
     const geometry = new THREE.PlaneGeometry(1, 1);
-    // const material = createChromaMaterial(texture, 0x000000); //chroma
-    
-    // const geometry = new THREE.PlaneGeometry(2, 1080/(1920/2));
     const material = new THREE.MeshBasicMaterial({map: texture});
     const plane = new THREE.Mesh(geometry, material);
 
@@ -34,7 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
       video.pause();
     }
     video.addEventListener( 'play', (loop) => {
-      // video.currentTime = 6;
     });
 
     const light = new THREE.HemisphereLight( 0xffffff, 0xbbbbff, 1 );
@@ -49,24 +45,9 @@ document.addEventListener('DOMContentLoaded', () => {
     gltf.scene.position.set(0, 0, 0);
     gltf.scene.rotation.set(45, 0, 0);
 
-
-    // const gltf2 = await loadGLTF('./models/dance-1/scene.gltf');
-    // gltf2.scene.scale.set(0.2, 0.2, 0.2);
-    // gltf2.scene.position.set(0, -0.5, 0);
-    // gltf2.scene.rotation.set(45, 0, 0);
-
     const anchor = mindarThree.addAnchor(0);
     anchor.group.add(gltf.scene);
-    // anchor.group.add(gltf2.scene);
-
-    // --- for animation ---
-    // const mixer = new THREE.AnimationMixer(gltf.scene);
-    // const action = mixer.clipAction(gltf.animations[0]);
-    // action.play();
   
-    // const mixer2 = new THREE.AnimationMixer(gltf2.scene);
-    // const action2 = mixer2.clipAction(gltf2.animations[0]);
-    // action2.play();
 
     const clock = new THREE.Clock();
 
@@ -92,7 +73,6 @@ const listener = new THREE.AudioListener();
     await mindarThree.start();
     renderer.setAnimationLoop(() => {
       const delta = clock.getDelta();
-      // mixer.update(delta);
       renderer.render(scene, camera);
     });
   }
