@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     const {renderer, scene, camera} = mindarThree;
     
-    // Image
+// Image
     const textureLoader = new THREE.TextureLoader();
     const textureImage = textureLoader.load('./elevenburgers-background.png'); 
     const geometry = new THREE.PlaneGeometry(2 , 1);
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const anchorVid = mindarThree.addAnchor(0);
     anchorVid.group.add(plane);
 
-    // video
+// video
     // const video = await loadVideo("./videos/video1.mp4");
     // const texture = new THREE.VideoTexture(video);
 
@@ -48,14 +48,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   
 
-    // Light
+// Light
     const light = new THREE.HemisphereLight( 0xffffff, 0xbbbbff, 1 );
     scene.add(light);
     const dirLight = new THREE.DirectionalLight(0xffffff, 2);
     dirLight.position.set(1, 2, 3);
     scene.add(dirLight);
 
-    //model
+//model
     const gltf = await loadGLTF('./models/NYburger.glb');
     gltf.scene.scale.set(0.2, 0.2, 0.2);
     gltf.scene.position.set(0.4,-1, 0.2);
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-    //audio
+//audio
     const audioClip = await loadAudio("./Excuses - AP Dhillon Gurinder Gill (DJJOhAL.Com).mp3");
     const listener = new THREE.AudioListener();
     camera.add(listener);
@@ -95,10 +95,10 @@ document.addEventListener('DOMContentLoaded', () => {
   let targetY = 0.1;   // final height
   let speed = 0.01;
 
-
-
     let rotate = true; //rotate
 
+
+// render
     await mindarThree.start();
     renderer.setAnimationLoop(() => {
     const delta = clock.getDelta();
@@ -106,17 +106,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     
     if (isAnimating) {
-  // rise
-  gltf.scene.position.y += (targetY - gltf.scene.position.y) * 0.1;
+      // rise
+      gltf.scene.position.y += (targetY - gltf.scene.position.y) * 0.1;
 
-  // rotate
-  gltf.scene.rotation.y += 0.03;
+      // rotate
+      gltf.scene.rotation.y += 0.03;
 
-  // scale up
-  gltf.scene.scale.lerp(new THREE.Vector3(0.5,0.5,0.5), 0.1);
+      // scale up
+      gltf.scene.scale.lerp(new THREE.Vector3(0.5,0.5,0.5), 0.1);
 
-  if (Math.abs(targetY - gltf.scene.position.y) < 0.001) {
-    isAnimating = false;
+      if (Math.abs(targetY - gltf.scene.position.y) < 0.001) {
+        isAnimating = false;
   }
 }
     if (rotate) {
