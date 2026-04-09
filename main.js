@@ -14,8 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Image
     const textureLoader = new THREE.TextureLoader();
-    const textureImage = textureLoader.load('./elevenburgers.png'); 
-    const geometry = new THREE.PlaneGeometry(1, 1);
+    const textureImage = textureLoader.load('./elevenburgers-background.png'); 
+    const geometry = new THREE.PlaneGeometry(2 , 1);
     const material = new THREE.MeshBasicMaterial({
     map: textureImage,
     transparent: true // optional if image has alpha
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //model
     const gltf = await loadGLTF('./models/NYburger.glb');
     gltf.scene.scale.set(0.2, 0.2, 0.2);
-    gltf.scene.position.set(0,-1, 0.2);
+    gltf.scene.position.set(0.4,-1, 0.2);
     gltf.scene.rotation.set(Math.PI/2, 0, 0);
 
     const anchor = mindarThree.addAnchor(0);
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
     anchor.onTargetLost = () => {
       audio.pause();
     }
-    
+
 // Animation
   let isAnimating = false;
   let targetY = 0.1;   // final height
