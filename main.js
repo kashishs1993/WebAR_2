@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
     scene.add(dirLight);
 
     //model
-    const gltf = await loadGLTF('./models/burger2/burger2.glb');
+    const gltf = await loadGLTF('./models/NYburger.glb');
     gltf.scene.scale.set(0.5, 0.5, 0.5);
     gltf.scene.position.set(0, 0.2, 0);
     gltf.scene.rotation.set(90, 90, 0);
