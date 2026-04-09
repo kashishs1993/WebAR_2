@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const gltf = await loadGLTF('./models/burger2/burger2.glb');
     gltf.scene.scale.set(0.5, 0.5, 0.5);
     gltf.scene.position.set(0, 0, 0);
-    gltf.scene.rotation.set(45, 0, 0);
+    gltf.scene.rotation.set(0, 0, 0);
 
     const anchor = mindarThree.addAnchor(0);
     anchor.group.add(gltf.scene);
