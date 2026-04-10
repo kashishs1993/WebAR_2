@@ -67,8 +67,6 @@ document.addEventListener('DOMContentLoaded', () => {
   
     const clock = new THREE.Clock();
 
-
-
 //audio
     const audioClip = await loadAudio("./Excuses - AP Dhillon Gurinder Gill (DJJOhAL.Com).mp3");
     const listener = new THREE.AudioListener();
@@ -103,7 +101,6 @@ document.addEventListener('DOMContentLoaded', () => {
     renderer.setAnimationLoop(() => {
     const delta = clock.getDelta();
     anchor.group.updateMatrixWorld(true);
-
     
     if (isAnimating) {
       // rise
